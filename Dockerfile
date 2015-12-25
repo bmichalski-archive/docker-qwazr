@@ -14,13 +14,13 @@ apt-get install wget
 WORKDIR /root
 
 RUN \
-wget http://download.qwazr.com/build-4deef66/qwazr-server-1.0.0-SNAPSHOT.deb
+wget http://download.qwazr.com/build-5e73bb6/qwazr-server-1.0.1-SNAPSHOT.deb
 
 RUN \
-dpkg -i qwazr-server-1.0.0-SNAPSHOT.deb
+dpkg -i qwazr-server-1.0.1-SNAPSHOT.deb
 
 RUN \
-rm qwazr-server-1.0.0-SNAPSHOT.deb
+rm qwazr-server-1.0.1-SNAPSHOT.deb
 
 CMD \
 service qwazr start && tail -f /var/log/qwazr/*
