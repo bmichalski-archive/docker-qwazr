@@ -17,6 +17,9 @@ WEBAPP_PORT=9090
 # The TCP port used by the web services
 WEBSERVICE_PORT=9091
 
+EXPOSE_WEBAPP_PORT=9090
+EXPOSE_WEBSERVICE_PORT=9091
+
 # A list of masters separated by commas
 #QWAZR_MASTERS="127.0.0.1:9091"
 
@@ -48,8 +51,8 @@ fi
 
 docker run \
 -it \
--p 9090:9090 \
--p 9091:9091 \
+-p $EXPOSE_WEBAPP_PORT:$WEBAPP_PORT \
+-p $EXPOSE_WEBSERVICE_PORT:$WEBSERVICE_PORT \
 -v $DIR/data:$QWAZR_DATA \
 --name docker-qwazr \
 bmichalski-docker/docker-qwazr \
