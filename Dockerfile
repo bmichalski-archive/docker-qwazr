@@ -22,5 +22,16 @@ dpkg -i qwazr-server-1.0.1-SNAPSHOT.deb
 RUN \
 rm qwazr-server-1.0.1-SNAPSHOT.deb
 
-CMD \
-service qwazr start && tail -f /var/log/qwazr/*
+RUN \
+cp /var/lib/qwazr/log4j.properties /root/default_log4j.properties
+
+COPY \
+docker-entrypoint.sh /root/docker-entrypoint.sh
+
+RUN \
+chmod u+x /root/docker-entrypoint.sh
+
+ENTRYPOINT ["/root/docker-entrypoint.sh"]
+
+EXPOSE 9090 9091
+
