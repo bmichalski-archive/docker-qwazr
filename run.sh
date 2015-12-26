@@ -55,6 +55,6 @@ docker run \
 -p $EXPOSE_WEBSERVICE_PORT:$WEBSERVICE_PORT \
 -v $DIR/data:$QWAZR_DATA \
 --name docker-qwazr \
-bmichalski-docker/docker-qwazr \
+bmichalski/docker-qwazr \
 bash -c "$CMD_RUN_QWAZR" 
 

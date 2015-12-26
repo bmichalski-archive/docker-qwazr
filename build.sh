@@ -1,2 +1,2 @@
 #!/bin/bash
-docker build -t bmichalski-docker/docker-qwazr .
+docker build -t bmichalski/docker-qwazr .
