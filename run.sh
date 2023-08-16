@@ -57,4 +57,3 @@ docker run \
 --name docker-qwazr \
 bmichalski/docker-qwazr \
 bash -c "$CMD_RUN_QWAZR" 
-
