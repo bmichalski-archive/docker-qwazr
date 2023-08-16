@@ -50,10 +50,10 @@ then
 fi
 
 docker run \
--it \
--p $EXPOSE_WEBAPP_PORT:$WEBAPP_PORT \
--p $EXPOSE_WEBSERVICE_PORT:$WEBSERVICE_PORT \
--v $DIR/data:$QWAZR_DATA \
---name docker-qwazr \
-bmichalski/docker-qwazr \
-bash -c "$CMD_RUN_QWAZR" 
+  -it \
+  -p $EXPOSE_WEBAPP_PORT:$WEBAPP_PORT \
+  -p $EXPOSE_WEBSERVICE_PORT:$WEBSERVICE_PORT \
+  -v $DIR/data:$QWAZR_DATA \
+  --name docker-qwazr \
+  bmichalski/docker-qwazr \
+  bash -c "$CMD_RUN_QWAZR" 
